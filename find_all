@@ -6,6 +6,7 @@ if (($# < 1)); then
 fi
 
 order=$1
-paramfile=$(mktemp)
+mkdir -p tmp
+paramfile=tmp/order-"$order".param
 echo "letting n be $order" > "$paramfile"
 conjure solve -ac magic-squares.essence "$paramfile" --number-of-solutions=all
