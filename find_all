@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if (($# < 1)); then
+  echo "Usage: find_all order"
+  exit 1
+fi
+
+order=$1
+paramfile=$(mktemp)
+echo "letting n be $order" > "$paramfile"
+conjure solve -ac magic-squares.essence "$paramfile" --number-of-solutions=all
