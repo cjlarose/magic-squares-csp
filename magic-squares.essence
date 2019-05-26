@@ -1,0 +1,10 @@
+given n : int(1..)
+letting M be n * ((n**2 + 1)/2)
+letting D1 be domain matrix indexed by [int(1..n),int(1..n)] of int(1..n**2)
+find f : function (injective) tuple(int(1..n),int(1..n)) --> int(1..n**2)
+find A : D1 such that
+  forAll i, j : int(1..n) . A[i, j] = f(tuple(i, j)),
+  forAll i : int(1..n) . sum([A[i,j] | j : int(1..n)]) = M,
+  forAll j : int(1..n) . sum([A[i,j] | i : int(1..n)]) = M,
+  sum([A[i,i] | i : int(1..n)]) = M,
+  sum([A[i,n-i+1] | i : int(1..n)]) = M
