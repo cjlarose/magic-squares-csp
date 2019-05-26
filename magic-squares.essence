@@ -1,5 +1,5 @@
 given n : int(1..)
-letting M be n * ((n**2 + 1)/2)
+letting M be (((n**3) + n)/2)
 letting D1 be domain matrix indexed by [int(1..n),int(1..n)] of int(1..n**2)
 find f : function (injective) tuple(int(1..n),int(1..n)) --> int(1..n**2)
 find A : D1 such that
