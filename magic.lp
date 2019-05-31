@@ -16,3 +16,6 @@ magicConstant(M) :- size(N), M = (N * (N ** 2 + 1)) / 2.
 % diagonals sum to the magic constant
 :- M != #sum { X : content(X, I, I), I = 1..N }, size(N), magicConstant(M).
 :- M != #sum { X : content(X, I, N-I+1), I = 1..N }, size(N), magicConstant(M).
+
+%% Display
+#show content/3.
