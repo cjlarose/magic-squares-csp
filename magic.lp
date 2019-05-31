@@ -4,7 +4,7 @@ matrixCoord(I, J) :- I = 1..N, J = 1..N, size(N).
 matrixEntry(X) :- X = 1..N**2, size(N).
 
 %% Generate
-% no number is repeated in the matrix
+% each number appears exactly once in the matrix
 { content(X,I,J) : matrixCoord(I, J) } = 1 :- matrixEntry(X).
 
 % an entry contains one number
