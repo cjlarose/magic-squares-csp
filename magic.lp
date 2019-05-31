@@ -1,9 +1,9 @@
 size(3).
 magicConstant(M) :- size(N), M = (N * (N ** 2 + 1)) / 2.
-rowIndex(I) :- I = 1..N, size(N).
-colIndex(J) :- J = 1..N, size(N).
+rowIndex(1..N) :- size(N).
+colIndex(1..N) :- size(N).
 matrixCoord(I, J) :- rowIndex(I), colIndex(J).
-matrixEntry(X) :- X = 1..N**2, size(N).
+matrixEntry(1..N**2) :- size(N).
 mainDiagonalCoord(I, J) :- I = J, rowIndex(I), colIndex(J).
 skewDiagonalCoord(I, J) :- J = N - I + 1, rowIndex(I), size(N).
 
