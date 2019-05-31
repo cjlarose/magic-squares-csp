@@ -1,12 +1,14 @@
 size(3).
 magicConstant(M) :- size(N), M = (N * (N ** 2 + 1)) / 2.
+matrixCoord(I, J) :- I = 1..N, J = 1..N, size(N).
+matrixEntry(X) :- X = 1..N**2, size(N).
 
 %% Generate
 % no number is repeated in the matrix
-{ content(X,1..N,1..N) } = 1 :- X = 1..N**2, size(N). 
+{ content(X,I,J) : matrixCoord(I, J) } = 1 :- matrixEntry(X).
 
 % an entry contains one number
-{ content(1..N**2,I,J) } = 1 :- I = 1..N, J = 1..N, size(N).
+{ content(X,I,J) : matrixEntry(X) } = 1 :- matrixCoord(I, J).
 
 %% Test
 % rows sum to the magic constant
