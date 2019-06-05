@@ -17,6 +17,12 @@ matrixEntry(1..N**2) :- size(N).
 :- X != 5, content(X,2,2).
 
 % derived values
+% +----------+------+----------+
+% | A        | B    | 15-A-B   |
+% | 20-2*A-B | 5    | 2*A+B-10 |
+% | A+B-5    | 10-B | 10-A     |
+% +----------+------+----------+
+
 :- X != 15 - A - B, content(X,1,3), matrixEntry(X), content(A, 1, 1), content(B, 1, 2).
 :- X != 20 - (2 * A) - B, content(X,2,1), matrixEntry(X), content(A, 1, 1), content(B, 1, 2).
 :- X != (2 * A) + B - 10, content(X,2,3), matrixEntry(X), content(A, 1, 1), content(B, 1, 2).
