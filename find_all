@@ -7,6 +7,12 @@ fi
 
 order=$1
 mkdir -p tmp
-paramfile=tmp/order-"$order".param
-echo "letting n be $order" > "$paramfile"
-conjure solve -ac magic-squares.essence "$paramfile" --number-of-solutions=all
+paramfile=order-"$order".param
+echo "letting n be $order" > tmp/"$paramfile"
+
+docker run --rm \
+  -v "$PWD"/magic-squares.essence:/tmp/magic-squares.essence \
+  -v "$PWD"/tmp/"$paramfile":/tmp/"$paramfile" \
+  conjure \
+  conjure solve -ac --number-of-solutions=all --output-directory /tmp/conjure-output \
+    tmp/magic-squares.essence /tmp/"$paramfile"
