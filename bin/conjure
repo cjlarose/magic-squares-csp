@@ -11,7 +11,7 @@ paramfile=order-"$order".param
 echo "letting n be $order" > tmp/"$paramfile"
 
 docker run --rm \
-  -v "$PWD"/magic-squares.essence:/tmp/magic-squares.essence \
+  -v "$PWD"/src/magic-squares.essence:/tmp/magic-squares.essence \
   -v "$PWD"/tmp/"$paramfile":/tmp/"$paramfile" \
   conjure \
   conjure solve -ac --number-of-solutions=all --output-directory /tmp/conjure-output \
