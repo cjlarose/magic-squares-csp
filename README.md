@@ -16,8 +16,8 @@ order=3
 ./bin/conjure $order
 ```
 
-n  | Time (s)
---- | ---
-3 | 2.724
-4 | 27.523
-5 | &mdash;
+n  | Time (s) | Solutions / s
+--- | --- | ---
+3 | 2.724 | 0.341
+4 | 27.523 | 0.004
+5 | &mdash; | &mdash;
