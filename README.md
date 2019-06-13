@@ -18,8 +18,8 @@ order=3
 
 n  | Time (s) | Solutions / s
 --- | --- | ---
-3 | 2.724 | 0.341
-4 | 27.523 | 0.004
+3 | 2.724 | 2.937
+4 | 27.523 | 255.786
 5 | &mdash; | &mdash;
 
 ### Clingo
@@ -31,6 +31,6 @@ cat <(echo 'size('"$order"').') src/magic.lp | ./bin/clingo 0
 
 n | Time (s) | Solutions / s
 --- | --- | ---
-3 | 0.004 | 0.0005
-4 | 256.61 | 0.036
+3 | 0.004 | 2,000
+4 | 256.61 | 27.435
 5 | &mdash; | &mdash;
