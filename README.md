@@ -21,3 +21,16 @@ n  | Time (s) | Solutions / s
 3 | 2.724 | 0.341
 4 | 27.523 | 0.004
 5 | &mdash; | &mdash;
+
+### Clingo
+
+```sh
+order=3
+cat <(echo 'size('"$order"').') src/magic.lp | ./bin/clingo 0
+```
+
+n | Time (s) | Solutions / s
+--- | --- | ---
+3 | 0.004 | 0.0005
+4 | 256.61 | 0.036
+5 | &mdash; | &mdash;
