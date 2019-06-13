@@ -1,4 +1,3 @@
-size(3).
 magicConstant(M) :- size(N), M = (N * (N ** 2 + 1)) / 2.
 rowIndex(1..N) :- size(N).
 colIndex(1..N) :- size(N).
