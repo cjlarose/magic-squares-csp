@@ -1,6 +1,3 @@
 #!/bin/bash
 
-docker run --rm \
-  -v "$PWD":/app \
-  clingo \
-  /bin/sh -c 'cd /app && clingo '"$*"
+docker run -i --rm clingo clingo "$*"
