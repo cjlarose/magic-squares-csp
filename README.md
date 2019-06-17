@@ -59,16 +59,16 @@ This particular definition is based on ["Enumeration Programs" by Francis Gaspal
 Unfortunately, this encoding causes an explosion of rules during grounding. For example,
 
 ```sh
-./bin/gringo --text < src/order-3-parameterized.lp | wc -l
+./bin/gringo --text < src/order-4-parameterized.lp | wc -l
 ```
 
-yields 2,919 rules. By comparison, the classical encoding,
+yields 5,069,955 rules. By comparison, the classical encoding,
 
 ```sh
-cat <(echo 'size(3).') src/magic.lp | ./bin/gringo --text | wc -l
+cat <(echo 'size(4).') src/magic.lp | ./bin/gringo --text | wc -l
 ```
 
-yields only 77 rules.
+yields only 125 rules.
 
 ```sh
 order=3
