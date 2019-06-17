@@ -12,10 +12,10 @@ matrixEntry(1..N**2) :- size(N).
 % an entry contains one number
 { content(X,I,J) : matrixEntry(X) } = 1 :- matrixCoord(I, J).
 
-%% Test
 % fix the center value
-:- X != 5, content(X,2,2).
+content(5,2,2).
 
+%% Test
 % derived values
 % +----------+------+----------+
 % | A        | B    | 15-A-B   |

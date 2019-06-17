@@ -62,7 +62,7 @@ Unfortunately, this encoding causes an explosion of rules during grounding. For 
 ./bin/gringo --text < src/order-3-parameterized.lp | wc -l
 ```
 
-yields 2,926 rules. By comparison, the classical encoding,
+yields 2,919 rules. By comparison, the classical encoding,
 
 ```sh
 cat <(echo 'size(3).') src/magic.lp | ./bin/gringo --text | wc -l
