@@ -27,13 +27,8 @@ content(X,3,3) :- X = 10 - A, matrixEntry(X), content(A,1,1).
 % each number appears exactly once in the matrix
 :- { content(X,I,J) : matrixCoord(I, J) } != 1, matrixEntry(X).
 
-% a stable model must assign exactly one value to each derived entry
-:- { content(X,1,3) : matrixEntry(X) } != 1.
-:- { content(X,2,1) : matrixEntry(X) } != 1.
-:- { content(X,2,3) : matrixEntry(X) } != 1.
-:- { content(X,3,1) : matrixEntry(X) } != 1.
-:- { content(X,3,2) : matrixEntry(X) } != 1.
-:- { content(X,3,3) : matrixEntry(X) } != 1.
+% a stable model must assign exactly one value to each entry
+:- { content(X,I,J) : matrixEntry(X) } != 1, matrixCoord(I, J).
 
 %% Display
 #show content/3.
