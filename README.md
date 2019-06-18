@@ -79,3 +79,15 @@ n | Time (s) | Solutions / s
 --- | --- | ---
 3 | 0.006 | 1,333
 4 | &mdash; | &mdash;
+
+### Conjure (parameterized)
+
+```sh
+order=3
+./bin/conjure solve -ac --number-of-solutions=all < src/order-"$order"-parameterized.essence
+```
+
+n | Time (s) | Solutions / s
+--- | --- | ---
+3 | 2.559 | 3.126
+4 | 30.343 | 232.014
