@@ -13,7 +13,7 @@ These results were collected on a 2017 Macbook Pro with a 2.9 GHz Intel Core i7 
 
 ```sh
 order=3
-./bin/conjure $order
+cat <(echo 'letting n be '"$order") src/magic-squares.essence | ./bin/conjure solve -ac --number-of-solutions=all
 ```
 
 n  | Time (s) | Solutions / s
