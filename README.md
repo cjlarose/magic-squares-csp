@@ -82,6 +82,8 @@ n | Time (s) | Solutions / s
 
 ### Conjure (parameterized)
 
+A similar encoding for Conjure does not appear to suffer from the rule blow-up problem that we see with clingo. It's not clear that Conjure even has an explicit "grounding" step.
+
 ```sh
 order=3
 ./bin/conjure solve -ac --number-of-solutions=all < src/order-"$order"-parameterized.essence
