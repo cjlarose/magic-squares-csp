@@ -91,3 +91,13 @@ n | Time (s) | Solutions / s
 --- | --- | ---
 3 | 2.559 | 3.126
 4 | 30.343 | 232.014
+
+### Opportunities for further research
+
+Employ the use of a integer programming solver to enumerate magic squares. Liu, Janhunen, and Niemelä ([Answer Set Programming via Mixed Integer Programming][mip]) have demonstated that it's possible to use integer programming to help solve ASP problems.
+
+[mip]: http://users.ics.aalto.fi/guohua/KR12.pdf
+
+Enumerate order 6 magic squares with modular lifting. Croy, Hansen, and McQuillan ([Calculating the Number of Order-6 MagicSquares with Modular Lifting][modular-lifting]) have shown a technique for enumerating magic squares of order 6 by starting with magic squares mod 2. It may be possible to encode this technique in a way that it can be computed efficiently by an ASP solver.
+
+[modular-lifting]: https://www.aaai.org/ocs/index.php/SOCS/SOCS16/paper/viewFile/13973/13254
