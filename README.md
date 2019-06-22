@@ -93,6 +93,7 @@ n | Time (s) | Solutions / s
 --- | --- | ---
 3 | 2.559 | 3.126
 4 | 30.343 | 232.014
+5 | &mdash; | &mdash;
 
 ### Opportunities for further research
 
