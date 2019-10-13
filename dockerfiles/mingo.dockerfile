@@ -13,6 +13,8 @@ RUN curl -o /tmp/mingo.tar.gz https://research.ics.aalto.fi/software/asp/mingo/m
   && cd /opt/mingo/bin \
   && ./wget-gringo.sh
 
+COPY ./mingo-stdin.sh /opt/mingo/mingo-stdin.sh
+
 ENV PATH="/opt/mingo:${PATH}"
 
 WORKDIR /opt/mingo
