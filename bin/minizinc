@@ -1,0 +1,7 @@
+#!/bin/bash
+
+IFS='' read -r -d '' program <<EOF
+  cp /dev/stdin /tmp/model.mzn
+  minizinc $* /tmp/model.mzn | grep -vP '^(-|=)'
+EOF
+docker run -i --rm minizinc/minizinc /bin/bash -c "$program"
