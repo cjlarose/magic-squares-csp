@@ -1,4 +1,7 @@
 #!/bin/bash
 
-docker run -i --rm conjure \
-  /bin/bash -c 'echo "$(</dev/stdin)" > /tmp/magic.essence && conjure '"$*"' /tmp/magic.essence'
+IFS='' read -r -d '' program <<EOF
+  cp /dev/stdin /tmp/model.essence
+  conjure $* /tmp/model.essence
+EOF
+docker run -i --rm conjure /bin/bash -c "$program"
