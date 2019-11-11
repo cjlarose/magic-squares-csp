@@ -1,3 +1,8 @@
+// Enuemrates all magic square n = 4
+// Based on enuemration method by Gaspalou
+// See http://www.gaspalou.fr/magic-squares/programs.htm
+// and http://www.gaspalou.fr/magic-squares/enumeration.htm#13
+//
 // +----------+--------------+------------------+-----------+
 // | A        | F            | 34-A-C-F         | C         |
 // | G        | D            | E                | 34-D-E-G  |
