@@ -1,0 +1,27 @@
+int(N) :- size(N).
+int(magicConstant(M)) :- size(N), M = (N * (N ** 2 + 1)) / 2.
+
+rowIndex(1..N) :- size(N).
+colIndex(1..N) :- size(N).
+matrixCoord(I, J) :- rowIndex(I), colIndex(J).
+mainDiagonalCoord(I, J) :- I = J, rowIndex(I), colIndex(J).
+skewDiagonalCoord(I, J) :- J = N - I + 1, rowIndex(I), size(N).
+
+int(content(X,I,J)) :- matrixCoord(I,J).
+
+%% Generate
+% each number appears exactly once in the matrix
+% 1 { content(X,I,J) : matrixCoord(I, J) } 1 :- matrixEntry(X).
+
+% an entry contains one number
+% 1 { content(X,I,J) : matrixEntry(X) } 1 :- matrixCoord(I, J).
+
+%% Test
+% for each entry x, forbid x > n^2, forbid x < 1
+% :- matrixEntry(X)
+
+:- mlt(1, content(X,I,J), 1), matrixCoord(I,J).
+:- mgt(1, content(X,I,J), N ** 2), matrixCoord(I,J).
+
+%% Display
+#show content/3.
