@@ -19,6 +19,27 @@
 // TODO: remove explicit matrix (use just locals)
 use std::convert::TryInto;
 
+fn print_square(square: &[[usize; 16]; 16]) {
+    println!("{}",
+           format!("{} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}",
+                   square[0][0],
+                   square[0][1],
+                   square[0][2],
+                   square[0][3],
+                   square[1][0],
+                   square[1][1],
+                   square[1][2],
+                   square[1][3],
+                   square[2][0],
+                   square[2][1],
+                   square[2][2],
+                   square[2][3],
+                   square[3][0],
+                   square[3][1],
+                   square[3][2],
+                   square[3][3]));
+}
+
 fn main() {
     let mut square = [[0; 16]; 16];
     let mut taken = [false; 16];
@@ -124,24 +145,7 @@ fn main() {
                                     continue;
                                 }
 
-                                println!("{}",
-                                       format!("{} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}",
-                                               square[0][0],
-                                               square[0][1],
-                                               square[0][2],
-                                               square[0][3],
-                                               square[1][0],
-                                               square[1][1],
-                                               square[1][2],
-                                               square[1][3],
-                                               square[2][0],
-                                               square[2][1],
-                                               square[2][2],
-                                               square[2][3],
-                                               square[3][0],
-                                               square[3][1],
-                                               square[3][2],
-                                               square[3][3]));
+                                print_square(&square);
                             }
 
                             taken[f - 1] = false;
